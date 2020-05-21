@@ -6,8 +6,18 @@ Returns: a List of integers
 
 def sliding_window_max(nums, k):
     # Your code here
-
-    pass
+    max_values = []
+    # loop through outer array (nums)
+    current_max = nums[0]
+    for i in range(0, len(nums) - k + 1):
+        # create inner array
+        # and loop through that to find it's max value
+        for j in nums[i: i + k]:
+            if current_max < j:
+                current_max = j
+        max_values.append(current_max)
+    # return new array
+    return max_values
 
 
 if __name__ == '__main__':
@@ -22,7 +32,11 @@ if __name__ == '__main__':
 Problem:
 Sliding Window Max
 
-Given an array of integers, there is a sliding window of size `k` which is moving from the left side of the array to the right, one element at a time. You can only interact with the `k` numbers in the window. Return an array consisting of the maximum value of each window of elements.
+Given an array of integers, there is a sliding window of size `k` 
+which is moving from the left side of the array to the right, 
+one element at a time. 
+You can only interact with the `k` numbers in the window. 
+Return an array consisting of the maximum value of each window of elements.
 
 ## Example
 ```
