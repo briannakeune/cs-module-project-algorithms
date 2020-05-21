@@ -5,9 +5,18 @@ Returns: a List of integers
 
 
 def moving_zeroes(arr):
+    print(arr)
     # Your code here
-
-    pass
+    # loop through array
+    for i in range(0, len(arr)):
+        # if value is 0
+        if arr[i] is 0:
+            # pop value,
+            place_at_end = arr.pop(i)
+            # attach to the end
+            arr.append(place_at_end)
+    # return the altered array
+    return arr
 
 
 if __name__ == '__main__':
@@ -20,7 +29,9 @@ if __name__ == '__main__':
 Problem:
 Moving Zeroes
 
-Write a function that takes an array of integers and moves each non-zero integer to the left side of the array, then returns the altered array. The order of the non-zero integers does not matter in the mutated array.
+Write a function that takes an array of integers and moves each non-zero 
+integer to the left side of the array, then returns the altered array. 
+The order of the non-zero integers does not matter in the mutated array.
 
 ## Examples
 ```
